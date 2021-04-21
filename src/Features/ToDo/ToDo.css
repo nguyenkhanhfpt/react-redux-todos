@@ -1,0 +1,89 @@
+:root {
+    --primary-color: #ead7d7;
+}
+
+.ToDoComponent {
+    width: 450px;
+}
+
+.ToDoComponent-title {
+    text-align: center;
+    font-size: 60px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.ToDoComponent-box .nothing {
+    font-size: 18px;
+    color: #9c9c9c;
+    text-align: center;
+}
+
+.InputAdd .input-submit {
+    min-width: 100px;
+    margin-left: 5px;
+}
+
+.TaskItem {
+    display: grid;
+    grid-template-columns: 30px auto 30px;
+    align-items: center;
+    margin-bottom: 5px;
+
+    background-color: #fff;
+    padding: 13px 10px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 9px #cecece8a;
+}
+
+.TaskItem-work {
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.TaskItem-trash {
+    color: gray;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.TaskItem-completed .TaskItem-work {
+    opacity: .5;
+    text-decoration: line-through;
+}
+
+.TaskItem-completed .TaskItem-trash {
+    color: #f00;
+} 
+
+.toDoFilter {
+    padding-top: 10px;
+}
+
+.toDoFilter-box {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;  
+}
+
+.toDoFilter-item {
+    color: #777;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 6px;
+    line-height: 1;
+    border-radius: 5px;
+}
+
+.toDoFilter-item:hover {
+    color: #555;
+    text-decoration: none;
+    border: 1px solid var(--primary-color);
+}
+
+.toDoFilter-item.active {
+    color: #555;
+    border: 1px solid var(--primary-color);
+}
