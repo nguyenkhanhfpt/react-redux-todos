@@ -25,6 +25,7 @@
     width: 215px;
     border-radius: 3px;
     cursor:text;
+    z-index: 1;
 }
 
 .menu__search-input {
@@ -35,7 +36,7 @@
     border: 1px solid var(--primary-color);
     border-radius: 3px;
     font-size: 14px;
-    z-index: 10;
+    z-index: 2;
 }
 
 .menu__search-input:focus {
@@ -58,6 +59,15 @@
     color: var(--primary-color-text);
     font-size: 10px;
     margin: 6px;
+}
+
+.menu__search-icon__clicked {
+    left: 11px;
+    position: absolute;
+    top: 6.5px;
+    z-index: 2;
+    color: var(--primary-color-text);
+    font-size: 10px;
 }
 
 .menu__search-text {
