@@ -23,7 +23,6 @@ export default function MenuComponent() {
                 setIsClickedSearch(false);
             } else {
                 setIsClickedSearch(true);
-                inputRef.current.focus();
             }
         }
 
@@ -32,6 +31,12 @@ export default function MenuComponent() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [menuSearchRef]);
+
+    useEffect(() => {
+        if (isClickedSearch) {
+            inputRef.current.focus();
+        }
+    }, [isClickedSearch]);
 
     return (
         <div className="menu">
