@@ -4,7 +4,6 @@ import InputAdd from "./Components/InputAdd";
 import TaskItem from "./Components/TaskItem";
 import Filter from "./Components/Filter";
 import filterConfig from "../../config/filter";
-import "./ToDo.css";
 
 export default function ToDoComponent() {
     let { list, filter } = useSelector(ToDoSelect);

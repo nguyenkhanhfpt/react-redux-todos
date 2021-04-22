@@ -1,12 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ToDoComponent from './Features/ToDo/ToDoComponent';
-import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import RouterPage from "./Router/index";
 
 function App() {
   return (
-    <div className="App">
-      <ToDoComponent />
-    </div>
+    <Router>
+      <div className="App">
+        <RouterPage />
+      </div>
+    </Router>
   );
 }
 
