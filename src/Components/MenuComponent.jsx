@@ -2,6 +2,7 @@ import { Wrapper } from "../styles/StyleComponent";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import homeIcon from "../images/home.png";
 import inboxIcon from "../images/inbox.png";
 import exploreIcon from "../images/explore.png";
@@ -49,9 +50,14 @@ export default function MenuComponent() {
                         <input type="text" className="menu__search-input" placeholder="Tìm kiếm" ref={inputRef} />
                         {
                             isClickedSearch ? (
-                                <span className="menu__search-icon__clicked">
-                                    <FontAwesomeIcon icon={faSearch} />
-                                </span>
+                                <div className="w-100">
+                                    <span className="menu__search-icon__clicked menu__search-icon__clicked--search">
+                                        <FontAwesomeIcon icon={faSearch} />
+                                    </span>
+                                    <span className="menu__search-icon__clicked menu__search-icon__clicked--cancel">
+                                        <FontAwesomeIcon icon={faTimesCircle} />
+                                    </span>
+                                </div>
                             ) : (
                                 <div className="menu__search-box">
                                     <span className="menu__search-icon">

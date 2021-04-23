@@ -62,12 +62,23 @@
 }
 
 .menu__search-icon__clicked {
-    left: 11px;
     position: absolute;
     top: 6.5px;
     z-index: 2;
     color: var(--primary-color-text);
+    opacity: .5;
+}
+
+.menu__search-icon__clicked--search {
+    left: 11px;
     font-size: 10px;
+}
+
+.menu__search-icon__clicked--cancel {
+    right: 8px;
+    font-size: 14.5px;
+    top: 3.7px;
+    cursor: alias;
 }
 
 .menu__search-text {
