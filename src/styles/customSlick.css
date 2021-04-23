@@ -1,0 +1,28 @@
+.slick-slider, .slick-list, .slick-track {
+    height: 100%;
+    text-align: center;
+}
+
+.slick-next, .slick-prev {
+    z-index: 5;
+    width: 25px;
+    height: 25px;
+}
+
+.slick-prev {
+    left: 10px;
+} 
+
+.slick-next {
+    right: 10px;
+}
+
+.slick-prev::before, .slick-next::before {
+    color: rgba(211, 211, 211, 0.699);
+    border-radius: 100%;
+    font-size: 25px;
+}
+
+.slick-disabled::before {
+    visibility: hidden;
+}
