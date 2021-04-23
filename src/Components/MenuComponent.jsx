@@ -15,6 +15,7 @@ import { useRef } from "react";
 
 export default function MenuComponent() {
     const [isClickedSearch, setIsClickedSearch] = useState(false);
+    const [valueSearch, setValueSearch] = useState("");
     const menuSearchRef = useRef();
     const inputRef = useRef();
 
@@ -39,6 +40,14 @@ export default function MenuComponent() {
         }
     }, [isClickedSearch]);
 
+    const cancelSearch = () => {
+        setIsClickedSearch(false);
+    }
+
+    const doSearching = () => {
+        setValueSearch(inputRef.current.value);
+    }
+
     return (
         <div className="menu">
             <Wrapper>
@@ -47,14 +56,14 @@ export default function MenuComponent() {
                         <img className="menu__logo" src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt=""/>
                     </Link>
                     <div className="menu__search" id="menu__search" ref={menuSearchRef}>
-                        <input type="text" className="menu__search-input" placeholder="Tìm kiếm" ref={inputRef} />
+                        <input onKeyUp={doSearching} type="text" className="menu__search-input" placeholder="Tìm kiếm" ref={inputRef} />
                         {
                             isClickedSearch ? (
                                 <div className="w-100">
                                     <span className="menu__search-icon__clicked menu__search-icon__clicked--search">
                                         <FontAwesomeIcon icon={faSearch} />
                                     </span>
-                                    <span className="menu__search-icon__clicked menu__search-icon__clicked--cancel">
+                                    <span onClick={cancelSearch} className="menu__search-icon__clicked menu__search-icon__clicked--cancel">
                                         <FontAwesomeIcon icon={faTimesCircle} />
                                     </span>
                                 </div>
@@ -64,7 +73,7 @@ export default function MenuComponent() {
                                         <FontAwesomeIcon icon={faSearch} />
                                     </span>
                                     <span className="menu__search-text">
-                                        Tìm kiếm
+                                        {valueSearch ? valueSearch : 'Tìm kiếm'}
                                     </span>
                                 </div>
                             ) 

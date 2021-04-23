@@ -1,10 +1,14 @@
 @import "./variable.css";
 
 .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 54px;
     border-bottom: 1px solid var(--primary-color);
     background-color: var(--white);
+    z-index: 5;
 }
 
 .menu__box {
